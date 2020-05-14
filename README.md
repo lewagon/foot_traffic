@@ -41,6 +41,8 @@ Pure Ruby + pure Chrome—what's not to like?
 
 ## Tutorial
 
+### Single thread
+
 In a simplest case, all you need is to `require "foot_traffic"`, put in the `using FootTraffic` to enable Ferrum [refinements](https://docs.ruby-lang.org/en/master/syntax/refinements_rdoc.html) and proceed with opening a session block. It yields a `window` object that is an instance of `Ferrum::Context` ([source](https://github.com/rubycdp/ferrum/blob/master/lib/ferrum/context.rb)). You can create a "tab" instance with a `new_tab` method and control it through Ferrum [methods](https://github.com/rubycdp/ferrum#examples) that are designed to be close to [Puppeteer](https://github.com/puppeteer/puppeteer/).
 
 ```rb
@@ -60,6 +62,8 @@ end
 ```
 
 In this case, all the instructions to the browser will run in a _single thread_ of execution, so you will see a browser performing actions consequetively.
+
+### Multiple threads
 
 As Ferrum is thread-safe by design, you can execute the same scenario in parallel. `tab_thread` method opens a block that yields the instance of `Ferrum::Page` ([source](https://github.com/rubycdp/ferrum/blob/master/lib/ferrum/page.rb)).
 
@@ -81,6 +85,8 @@ end
 
 Now, all the tabs will run **in parallel** (with limits to Ruby concurrency model, of course). After the session block finishes execution, browser will stay open indefinitely—until you `Ctrl-C` the original script. That might be useful if you want to use Chrome Developer Tools on open pages.
 
+### Setting duration
+
 If your script does not end with a session block and you want to continue running your code—set the duration time for the session.
 
 ```rb
@@ -100,6 +106,8 @@ end
 ```
 
 Now the block will exit after 10 seconds.
+
+### Quit when all threads quit
 
 If you don't want to guess the time for pages to stay open—you can use the `quit` parameter of session. Note that in that case, you need to wait for all your threads to exit. As a convenience, `session` block yields a second argument that is a primitive implementation of a thread pool.
 
@@ -123,6 +131,8 @@ end
 Now, the session block will exit as soon as the last action in the last tab completes—your script can run further!
 
 If you want to see how your website handles multiple concurrent visits—you can use the `clone` parameter that will open as many Chrome windows as you want and run the tab scenario in each of them.
+
+### Customizing
 
 As this puts the strain on your system's resources, it makes sense to also use some of the Ferrum's [options](https://github.com/rubycdp/ferrum#customization) to set higher timeouts for Chrome startup and page loads. `slowmo` parameter might be particularly useful for simulating real user behavior, as it will add a small wait before executing each action, including sending keyboard keys.
 
