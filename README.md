@@ -217,7 +217,7 @@ FootTraffic::Session.start(options: opts) do |window|
       tab.cookies.clear
       tab.cookies.set(
         name: "_example_session",
-        domain: "example.lewagon.co",
+        domain: "example.com",
         value: cookies[token]
       )
       tab.goto("https://example.com/protected_route")
