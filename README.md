@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/foot_traffic.svg)](https://badge.fury.io/rb/foot_traffic)
+
 # Foot Traffic :dancers: :dancing_men:
 
 A natural companion to an amazing [Ferrum](https://github.com/rubycdp/ferrum) gem that controls a fleet of Chrome windows and tabs and simulates real user interaction with your web applications from any Ruby scripts. Works naturally with your system Chrome or Chromium, no extra magic like Selenium or WebDrivers needed.
@@ -192,6 +194,8 @@ rescue FootTraffic::ResourceOverloadError
   exit(1)
 end
 ```
+
+### Cookies
 
 You can also control cookies for each tab. Keep in mind that in this case you don't want all your actions to run entirely concurrently, as the values of cookies may leak between tabs. Here's an example on how to avoid it:
 
