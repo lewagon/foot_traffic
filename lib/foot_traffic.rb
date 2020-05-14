@@ -1,6 +1,6 @@
 require "foot_traffic/version"
+require "foot_traffic/session"
 
 module FootTraffic
-  class Error < StandardError; end
-  # Your code goes here...
+  class ResourceOverloadError < StandardError; end
 end
