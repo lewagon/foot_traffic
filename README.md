@@ -1,6 +1,6 @@
 # Foot Traffic :dancers: :dancing_men:
 
-A natural companion to to an amazing [Ferrum](https://github.com/rubycdp/ferrum) gem that controls a fleet of Chrome windows and tabs and simulates real user interaction with your web applications from any Ruby scripts. Works naturally with your system Chrome or Chromium, no extra magic like Selenium or WebDrivers needed.
+A natural companion to an amazing [Ferrum](https://github.com/rubycdp/ferrum) gem that controls a fleet of Chrome windows and tabs and simulates real user interaction with your web applications from any Ruby scripts. Works naturally with your system Chrome or Chromium, no extra magic like Selenium or WebDrivers needed.
 
 ```rb
 require "foot_traffic"
@@ -150,7 +150,7 @@ FootTraffic::Session.start(options: opts, quit: true, clones: 10) do |window, po
 end
 ```
 
-You can also set the `headless` option to `true` to perform script in headless mode. If you open too many concurrent tabs, or the number of clones too high—your system will run out of memory. To prevent that, Foot Traffic will raise the
+You can also set the `headless` option to `true` to perform script in headless mode. If you open too many concurrent tabs, or the number of clones becomes too high—your system will run out of memory. To prevent that, Foot Traffic will raise the
 `FootTraffic::ResourceOverloadError` once `ThreadError`, `RuntimeError`, `Errno::EMFILE`, or `Errno::ECONNRESET` start propagating.
 
 ```rb
