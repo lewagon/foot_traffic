@@ -38,7 +38,7 @@ Or install it yourself as:
 Take a look at [Cuprite](https://github.com/rubycdp/cuprite) that allows Capybara to work with Ferrum instead of Selenium/ChromeDriver. The goal of Foot Traffic is not Rspec integration, but to create simple and reproducible Ruby scripts that automate common usage scenarios for moderate load testing of production applications or as a visual aid in development.
 
 
-> — Do you need write integration tests without Selenium/ChromeDriver dependency?  
+> — Do you want to write integration tests without Selenium/ChromeDriver dependency?  
 > — Use Cuprite and write specs with Capybara.
 
 > — Do you want to make sure that your app handles Action Cable properly for multiple users and see the interaction play out before your eyes?  
