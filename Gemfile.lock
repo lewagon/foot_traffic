@@ -7,7 +7,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.7.0)
+    addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     cliver (0.3.2)
     concurrent-ruby (1.1.6)
@@ -17,7 +17,7 @@ GEM
       cliver (~> 0.3)
       concurrent-ruby (~> 1.1)
       websocket-driver (>= 0.6, < 0.8)
-    public_suffix (4.0.5)
+    public_suffix (4.0.6)
     rake (12.3.3)
     rspec (3.9.0)
       rspec-core (~> 3.9.0)
